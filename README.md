@@ -1,2 +1,3 @@
-# pyramid-residual
-Code for "Learning Feature Pyramids for Human Pose Estimation" (ICCV 2017)
+# PyraNet: Learning Feature Pyramids for Human Pose Estimation
+
+Code will be available soon. Stay tuned!
