@@ -3,6 +3,7 @@ gen
 misc
 checkpoints
 pretrained
+experiments/mpii/eval*
 data/mpii/images
 data/lsp/lsp_dataset
 data/lsp/lspet_dataset
