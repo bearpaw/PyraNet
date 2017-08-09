@@ -178,7 +178,7 @@ function Trainer:test(epoch, dataloader)
       table.insert(indexTable, sample.index)
 
       for ii = 1, sample.input:size(1) do
-        matio.save(('checkpoints/mpii/mpii_hg_s8_r1_v511_scale4/results/valid_%.4d.mat'):format(sample.index[ii]),{image=sample.input[ii], preds=preds_hm[ii]})
+         matio.save(('checkpoints/mpii/hg-prm-stack2/results/valid_%.4d.mat'):format(sample.index[ii]),{image=sample.input[ii], score=output[#output]:float(), preds=preds_hm[ii]})
       end
 
       local acc, preds_hm = self:computeScore(output, sample.target)
