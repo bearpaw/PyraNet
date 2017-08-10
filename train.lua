@@ -466,13 +466,24 @@ function Trainer:copyInputs(sample)
    end
 end
 
+-- function Trainer:learningRate(epoch)
+--    -- Training schedule
+--    local decay = 0
+--    if string.find(self.opt.dataset, 'mpii') ~= nil then
+--       decay = epoch >= 200 and 3 or epoch >= 170 and 2 or epoch >= 150 and 1 or 0
+--    end
+--    return self.opt.LR * math.pow(0.1, decay)
+-- end
+
 function Trainer:learningRate(epoch)
    -- Training schedule
    local decay = 0
-   if string.find(self.opt.dataset, 'mpii') ~= nil then
-      decay = epoch >= 200 and 3 or epoch >= 170 and 2 or epoch >= 150 and 1 or 0
+   for i = 1, #self.opt.schedule do
+      if epoch >= self.opt.schedule[i] then 
+         decay = i
+      end
    end
-   return self.opt.LR * math.pow(0.1, decay)
+   return self.opt.LR * math.pow(self.opt.gamma, decay)
 end
 
 return M.Trainer

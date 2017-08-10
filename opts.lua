@@ -55,6 +55,8 @@ function M.parse(arg)
    cmd:option('-epsilon',      1e-8,       'Epsilon')
    cmd:option('-dropout',      0,          'Dropout ratio')
    cmd:option('-init',         'none',     'Weight initialization method: none | heuristic | xavier | xavier_caffe | kaiming')
+   cmd:option('-schedule',     '150 170 200', 'schedule to decay learning rate')
+   cmd:option('-gamma',        0.1,        'LR is multiplied by gamma on schedule.')
    ---------- Model options ----------------------------------
    cmd:option('-netType',      'hg-prm',   'Options: hg-prm')
    cmd:option('-shortcutType', '',         'Options: A | B | C')
@@ -102,7 +104,14 @@ function M.parse(arg)
 
    if opt.shareGradInput and opt.optnet then
       cmd:error('error: cannot use both -shareGradInput and -optnet')
+   end   
+
+   -- Parse schedule
+   schedule = {}
+   for x in string.gmatch(opt.schedule, "%S+") do 
+      table.insert(schedule, tonumber(x))
    end
+   opt.schedule = schedule
 
    return opt
 end
