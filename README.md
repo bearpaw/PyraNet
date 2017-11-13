@@ -3,7 +3,7 @@
 Training and testing code for the paper 
 > **[Learning Feature Pyramids for Human Pose Estimation](https://arxiv.org/abs/1708.01101)**  
 > Wei Yang, Shuang Li, Wanli Ouyang, Hongsheng Li, Xiaogang Wang  
-> *arXiv preprint arXiv:1708.01101* 
+> ICCV, 2017 
 
 This code is based on [stacked hourglass networks](https://github.com/anewell/pose-hg-train) and [fb.resnet.torch](https://github.com/facebook/fb.resnet.torch). Thanks to the authors. 
 
