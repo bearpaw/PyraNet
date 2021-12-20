@@ -47,7 +47,7 @@ This code is based on [stacked hourglass networks](https://github.com/anewell/po
 ### Quick Start
 
 #### Testing from our pretrained model
-Download our pretrained model to `./pretrained` folder from [Google Drive](https://drive.google.com/open?id=0B63t5HSgY4SQbmJoRV9fOTBFTlU). Test on the MPII validation set by running the following command
+Download our pretrained model to `./pretrained` folder from [Google Drive](https://drive.google.com/drive/folders/0B63t5HSgY4SQbmJoRV9fOTBFTlU?resourcekey=0-AT4Eik8SdlpF2nQ7vevbIg&usp=sharing). Test on the MPII validation set by running the following command
 
 ```
 qlua main.lua -batchSize 1 -nGPU 1 -nStack 8 -minusMean true -loadModel pretrained/model_250.t7 -testOnly true -debug true
@@ -118,7 +118,7 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=$gpuID th main.lua \
 
 
 ## Evaluation
-You may evaluate the PCKh score of your model on the MPII validation set. To get start, download our prediction `pred_multiscale_250.h5` to `./pretrained` from [Google Drive](https://drive.google.com/open?id=0B63t5HSgY4SQbmJoRV9fOTBFTlU), and run the MATLAB script `evaluation/eval_PCKh.m`. You'll get the following results
+You may evaluate the PCKh score of your model on the MPII validation set. To get start, download our prediction `pred_multiscale_250.h5` to `./pretrained` from [Google Drive](https://drive.google.com/drive/folders/0B63t5HSgY4SQbmJoRV9fOTBFTlU?resourcekey=0-AT4Eik8SdlpF2nQ7vevbIg&usp=sharing), and run the MATLAB script `evaluation/eval_PCKh.m`. You'll get the following results
 
 ```
       Head , Shoulder , Elbow , Wrist , Hip , Knee  , Ankle , Mean , 
